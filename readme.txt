@@ -13,11 +13,11 @@ Donate: https://www.paypal.me/freddan88
 YouTube: https://www.youtube.com/user/FreLee54
 
 Github-main: https://github.com/freddan88
-Github-page: 
+Github-page: https://github.com/freddan88/srcds-monitor-web
 
 Video:
-Tutorial:
-Download:
+Tutorial: https://github.com/freddan88/srcds-monitor-web/blob/master/readme.txt
+Download: http://www.leemann.se/fredrik/file_downloads/srcds_monitor1.zip
 
 Platform: WEB
 Language: HTML CSS PHP
