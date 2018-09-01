@@ -58,10 +58,10 @@ Actions and usage:
 ------------------
 
 You can upload more pictures of maps in 'img/maps'
-Simple SRCDS Monitor only supports .jpg-files and will display a picture that is having the same name as the current map playing on SRCDS
-If a picture cant be found the default picture from 'img/maps/srcds.jpg' will be used...
+Simple SRCDS Monitor only supports .jpg-files and will display a picture of the same name as the current map
+If a picture can´t be found the default picture from 'img/maps/srcds.jpg' will be used...
 	
-This monitoring page has only tested on SRCDS servers that are playing Counter Strike Source
+This monitoring page has only been tested on SRCDS servers that are playing Counter Strike Source
 	
 ----------
 END README
