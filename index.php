@@ -4,8 +4,8 @@ header("Refresh:10");
 # Simple srcds query based on s1lk [PHP] Simple server query
 # URL: https://oxidemod.org/threads/php-simple-server-query.2374
 # Configuration:
-$ip = '192.168.0.5';
-$queryport = 27015;
+$ip = 'taggz.mine.nu';
+$queryport = 27025;
 ####################################################################
 $socket = @fsockopen("udp://".$ip, $queryport , $errno, $errstr, 5);
 
@@ -29,30 +29,11 @@ $server['playersmax'] = ord(substr($inner, 3, 1));
 $server['password'] = ord(substr($inner, 7, 1));
 $server['vac'] = ord(substr($inner, 8, 1));
 $file="img/maps/$server[map].jpg";
+file_exists($file) 		? $img="$file" : $img="img/maps/srcds.jpg";
 
-if ($server['game']) {
-	$status="<span style='color:green;'>Server Online</span>";
-} else {
-	$status="<span style='color:red;'>Server Offline</span>";
-}
-
-if (file_exists($file)) {
-    $img="$file";
-} else {
-    $img="img/maps/srcds.jpg";
-}
-
-if ($server['password']==1) {
-	$password="Yes";
-} else {
-	$password="No";
-}
-
-if ($server['vac']==1) {
-	$vac="VAC Enabled";
-} else {
-	$vac="VAC Disabled";
-}
+$server['game'] 			? $status="<span style='color:green;'>Server Online</span>" : $status="<span style='color:red;'>Server Offline</span>";
+$server['password'] ? $password="Yes" : $password="No";
+$server['vac'] 			? $vac="VAC Enabled" : $vac="VAC Disabled";
 
 ?>
 
@@ -64,7 +45,7 @@ if ($server['vac']==1) {
         <meta name="robots" content="noindex,nofollow"/>
 		<meta charset="UTF-8"/>
     </head>
-	
+
     <body>
         <div class="main-box">
             <header><h2>Simple Srcds Monitor</h2></header>
@@ -83,7 +64,7 @@ if ($server['vac']==1) {
                         <h3>Game: <?php echo $server['description']; ?></h3>
                         <h3>Map: <?php echo $server['map']; ?></h3>
                         <h3>Players: <?php echo $server['players']; ?>/<?php echo $server['playersmax']; ?></h3>
-                        <br/>                        
+                        <br/>
                         <h3>Password: <?php echo $password; ?></h3>
                         <h3>Secure: <?php echo $vac; ?></h3>
                     </div>
@@ -91,7 +72,7 @@ if ($server['vac']==1) {
 				</br>
 				<center><a href="steam://connect/<?php echo $ip ?>:<?php echo $queryport ?>"><h4>Click here to connect</h4></center></a>
             </main>
-            
+
 			<footer>
 				<h2>Simple Srcds Monitor</h2>
 			</footer>
