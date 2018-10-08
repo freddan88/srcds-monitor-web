@@ -4,8 +4,8 @@ header("Refresh:10");
 # Simple srcds query based on s1lk [PHP] Simple server query
 # URL: https://oxidemod.org/threads/php-simple-server-query.2374
 # Configuration:
-$ip = 'taggz.mine.nu';
-$queryport = 27025;
+$ip = '192.168.0.5';
+$queryport = 27015;
 ####################################################################
 $socket = @fsockopen("udp://".$ip, $queryport , $errno, $errstr, 5);
 
