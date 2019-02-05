@@ -1,11 +1,14 @@
 <?php
 error_reporting(0);
 header("Refresh:10");
+# -------------------------------------------------------- #
 # Simple srcds query based on s1lk [PHP] Simple server query
 # URL: https://oxidemod.org/threads/php-simple-server-query.2374
 # Configuration:
+#
 $ip = '192.168.0.5';
 $queryport = 27015;
+#__________________________________________________________________#
 ####################################################################
 $socket = @fsockopen("udp://".$ip, $queryport , $errno, $errstr, 5);
 
@@ -28,17 +31,19 @@ $server['players'] = ord(substr($inner, 2, 1));
 $server['playersmax'] = ord(substr($inner, 3, 1));
 $server['password'] = ord(substr($inner, 7, 1));
 $server['vac'] = ord(substr($inner, 8, 1));
-$file="img/maps/$server[map].jpg";
-file_exists($file) 		? $img="$file" : $img="img/maps/srcds.jpg";
 
-$server['game'] 			? $status="<span style='color:green;'>Server Online</span>" : $status="<span style='color:red;'>Server Offline</span>";
+$file="img/maps/$server[map].jpg";
+file_exists($file) ? $img="$file" : $img="img/maps/srcds.jpg";
+
+$server['game'] ? $status="<span style='color:green;'>Server Online</span>" : $status="<span style='color:red;'>Server Offline</span>";
 $server['password'] ? $password="Yes" : $password="No";
-$server['vac'] 			? $vac="VAC Enabled" : $vac="VAC Disabled";
+$server['vac'] ? $vac="VAC Enabled" : $vac="VAC Disabled";
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <title>Simple Srcds Monitor</title>
 		<link href="style.css" type="text/css" rel="stylesheet"/>
@@ -53,24 +58,24 @@ $server['vac'] 			? $vac="VAC Enabled" : $vac="VAC Disabled";
                 <div class="flex">
                     <div class="flex-1">
                         <div>
-                            <img src="<?php echo $img ?>"/>
-                            <h4><?php echo $server['map']; ?></h4>
+                            <img src="<?= $img ?>"/>
+                            <h4><?= $server['map']; ?></h4>
                         </div>
                     </div>
                     <div class="flex-2">
-                        <h3>Status: <?php echo $status ?></h3>
-                        <h3>Name: <?php echo $server['name']; ?></h3>
+                        <h3>Status: <?= $status ?></h3>
+                        <h3>Name: <?= $server['name']; ?></h3>
                         <br/>
-                        <h3>Game: <?php echo $server['description']; ?></h3>
-                        <h3>Map: <?php echo $server['map']; ?></h3>
-                        <h3>Players: <?php echo $server['players']; ?>/<?php echo $server['playersmax']; ?></h3>
+                        <h3>Game: <?= $server['description']; ?></h3>
+                        <h3>Map: <?= $server['map']; ?></h3>
+                        <h3>Players: <?= $server['players']; ?>/<?= $server['playersmax']; ?></h3>
                         <br/>
-                        <h3>Password: <?php echo $password; ?></h3>
-                        <h3>Secure: <?php echo $vac; ?></h3>
+                        <h3>Password: <?= $password; ?></h3>
+                        <h3>Secure: <?= $vac; ?></h3>
                     </div>
                 </div>
 				</br>
-				<center><a href="steam://connect/<?php echo $ip ?>:<?php echo $queryport ?>"><h4>Click here to connect</h4></center></a>
+				<center><a href="steam://connect/<?= $ip ?>:<?= $queryport ?>"><h4>Click here to connect</h4></center></a>
             </main>
 
 			<footer>
