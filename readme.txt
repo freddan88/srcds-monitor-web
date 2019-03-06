@@ -22,6 +22,10 @@ Download: http://www.leemann.se/fredrik/file_downloads/srcds_monitor1.zip
 Platform: WEB
 Language: HTML CSS PHP
 
+----------------------------------------------------
+License MIT: https://choosealicense.com/licenses/mit
+----------------------------------------------------
+
 ------------
 Description:
 ------------
