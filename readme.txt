@@ -9,9 +9,6 @@ Links:
 ------
 
 URL: http://www.leemann.se/fredrik
-Donate: https://www.paypal.me/freddan88
-YouTube: https://www.youtube.com/user/FreLee54
-
 Github-main: https://github.com/freddan88
 Github-page: https://github.com/freddan88/srcds-monitor-web
 
